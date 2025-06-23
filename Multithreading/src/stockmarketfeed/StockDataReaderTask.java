@@ -9,10 +9,12 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.RecursiveTask;
+import java.util.logging.Logger;
 
 public class StockDataReaderTask extends RecursiveTask<List<Stock>> {
 
     private final File folder;
+    private final Logger logger = Logger.getLogger("StockDataReaderTask.class");
 
     public StockDataReaderTask(File folder) {
         this.folder = folder;
@@ -26,7 +28,9 @@ public class StockDataReaderTask extends RecursiveTask<List<Stock>> {
         if(files!=null){
             for(File file: files){
                 if(file.isFile()){
+                    logger.info(file.getName());
                     try {
+                        logger.info("Reading file: "+file.getName());
                         List<String> lines = Files.readAllLines(Paths.get(file.getAbsolutePath()));
                         lines.stream().skip(1).forEach(line->{
                             String[] data = line.split(",");

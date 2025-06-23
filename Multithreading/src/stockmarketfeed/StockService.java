@@ -7,10 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -51,5 +48,38 @@ public class StockService {
                 throw new RuntimeException(e);
             }
         });
+    }
+
+
+    public Map<String, List<SpikeInfo>> detectSpikes(List<Stock> stockList) {
+        Map<String, List<SpikeInfo>> spikeMap = new HashMap<>();
+        stockList.stream()
+                .collect(Collectors.groupingBy(Stock::getSymbol, Collectors.toList()))
+                .forEach((symbol, stocks) -> {
+
+                    List<Stock> sortedStocks = stocks.stream()
+                            .sorted(Comparator.comparing(Stock::getTimestamp)).toList();
+
+                    double minPrice = Double.MAX_VALUE;
+                    Stock baseStock = null;
+
+                    for (Stock stock : sortedStocks) {
+                        if (stock.getPrice() > minPrice * 1.10) {
+                            SpikeInfo info = new SpikeInfo(
+                                    symbol,
+                                    stock.getTimestamp(),
+                                    stock.getPrice(),
+                                    baseStock.getPrice()
+                            );
+                            spikeMap.computeIfAbsent(symbol, k -> new ArrayList<>()).add(info);
+                        }
+
+                        if (stock.getPrice() < minPrice) {
+                            minPrice = stock.getPrice();
+                            baseStock = stock;
+                        }
+                    }
+                });
+        return spikeMap;
     }
 }

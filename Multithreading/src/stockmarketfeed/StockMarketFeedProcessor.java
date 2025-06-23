@@ -13,7 +13,7 @@ public class StockMarketFeedProcessor {
 
     public static void main(String[] args) {
 
-        String path = "C:\\Users\\RajaNarasimhanKundet\\OneDrive - Atyeti Inc\\Desktop\\Self\\JavaPOC\\Atyeti_Raja_Java\\Multithreading\\src\\stockmarketfeed\\stocksdata";
+        String path = "C:\\Users\\RajaNarasimhanKundet\\OneDrive - Atyeti Inc\\Desktop\\Self\\JavaPOC\\Project_Training\\Multithreading\\src\\stockmarketfeed\\stocksdata";
 
         File folder = new File(path);
 
@@ -31,7 +31,9 @@ public class StockMarketFeedProcessor {
         stockService.generateLogFilesPerStock(stockList);
 
         //  DETECT SPIKES (PRICE JUMPS > 10%)
-
+        Map<String, List<SpikeInfo>> spikedStocks = stockService.detectSpikes(stockList);
+        System.out.println("Stocks that are raised than 10% :");
+        System.out.println(spikedStocks);
 
     }
 }

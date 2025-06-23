@@ -17,6 +17,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Multithreading\src\stockmarketfeed\stocksdata\stock_data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock\AXISBANK.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock\HDFCBANK.csv">
           <value>
             <Attribute>
@@ -39,34 +53,6 @@
           </value>
         </entry>
         <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock\TCS.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock_HDFCBANK.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock_INFY.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock_RELIANCE.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock_TCS.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
