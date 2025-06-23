@@ -17,6 +17,34 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock\HDFCBANK.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock\INFY.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock\RELIANCE.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock\TCS.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Multithreading\src\stockmarketfeed\stocksdataperstock_HDFCBANK.csv">
           <value>
             <Attribute>
