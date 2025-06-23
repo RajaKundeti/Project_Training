@@ -23,12 +23,12 @@ public class StockService {
         Optional<Stock> min = stockList.stream().min((s1, s2) -> (int) (s1.getPrice() - s2.getPrice()));
         if (min.isPresent()) {
             Stock stock = min.get();
-            minMaxStocks.put("Min Stock",stock);
+            minMaxStocks.put("Min Stock (in Price)",stock);
         }
         Optional<Stock> max = stockList.stream().max((s1, s2) -> (int) (s1.getPrice() - s2.getPrice()));
         if (max.isPresent()) {
             Stock stock = max.get();
-            minMaxStocks.put("Max Stock",stock);
+            minMaxStocks.put("Max Stock (in Price)",stock);
         }
         return minMaxStocks;
     }
@@ -38,7 +38,7 @@ public class StockService {
         stockList.stream().collect(Collectors.groupingBy(Stock::getSymbol)).entrySet().forEach(entry->{
         String symbol = entry.getKey();
         List<Stock> stocks = entry.getValue();
-        Path filePath = Paths.get("C:\\Users\\RajaNarasimhanKundet\\OneDrive - Atyeti Inc\\Desktop\\Self\\JavaPOC\\Atyeti_Raja_Java\\Multithreading\\src\\stockmarketfeed\\stocksdataperstock_" + symbol + ".csv");
+        Path filePath = Paths.get("C:\\Users\\RajaNarasimhanKundet\\OneDrive - Atyeti Inc\\Desktop\\Self\\JavaPOC\\Project_Training\\Multithreading\\src\\stockmarketfeed\\stocksdataperstock\\" + symbol + ".csv");
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(filePath.toFile()))){
             writer.write("Timestamp,Symbol,Price,Volume");
             writer.newLine();
