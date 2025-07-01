@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Multithreading/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Multithreading/stockmarketfeed/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Multithreading/threadsafecounter/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Security/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
